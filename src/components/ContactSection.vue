@@ -57,18 +57,24 @@ function backToWrite() {
       <div class="msg-area">
         <!-- writing -->
         <form v-if="status === 'writing'" class="msg-form" @submit.prevent="send">
-          <div class="field">
-            <input v-model="form.name" type="text" required autocomplete="name" placeholder=" " />
-            <label>Name</label>
-          </div>
-          <div class="field">
-            <input v-model="form.email" type="email" required autocomplete="email" placeholder=" " />
-            <label>Email</label>
-          </div>
-          <div class="field">
-            <textarea v-model="form.message" rows="3" required placeholder=" "></textarea>
-            <label>Message</label>
-          </div>
+           <div class="field">
+-            <input v-model="form.name" type="text" required autocomplete="name" placeholder=" " />
+-            <label>Name</label>
++            <input id="contact-name" v-model="form.name" type="text" name="name" required autocomplete="name" placeholder=" " />
++            <label for="contact-name">Name</label>
+           </div>
+           <div class="field">
+-            <input v-model="form.email" type="email" required autocomplete="email" placeholder=" " />
+-            <label>Email</label>
++            <input id="contact-email" v-model="form.email" type="email" name="email" required autocomplete="email" placeholder=" " />
++            <label for="contact-email">Email</label>
+           </div>
+           <div class="field">
+-            <textarea v-model="form.message" rows="3" required placeholder=" "></textarea>
+-            <label>Message</label>
++            <textarea id="contact-message" v-model="form.message" name="message" rows="3" required placeholder=" "></textarea>
++            <label for="contact-message">Message</label>
+           </div>
           <button type="submit" class="send-btn" :disabled="!formFilled" :class="{ disabled: !formFilled }">
             Send
           </button>
