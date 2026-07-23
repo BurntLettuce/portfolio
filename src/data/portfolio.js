@@ -8,7 +8,7 @@ export const profile = {
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/brandonle0824/' },
     { label: 'Spotify', href: 'https://open.spotify.com/user/316rchk3u7jcz6u453kegpnqvqwe?si=788b952bce164e3c' },
     { label: 'Last.fm', href: 'https://www.last.fm/user/LookItsGhostyy/listening-report/year' },
-    { label: 'Resume', href: asset('resume.pdf') },
+    { label: 'Resume', href: asset('le_resume.pdf') },
   ],
 }
 
