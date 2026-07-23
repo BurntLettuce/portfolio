@@ -39,7 +39,7 @@ const petals = [
         alt=""
       />
 
-      <!-- static koi, resting in its own spot in the scene -->
+      <!-- static koi -->
       <img :src="asset('images/koi.svg')" class="koi" alt="Koi fish" />
     </div>
 
@@ -53,10 +53,7 @@ const petals = [
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
-  min-height: 100dvh;
-  max-height: 100vh;
-  max-height: 100dvh;
+  height: 100%;
   display: flex;
   align-items: center;
   background: linear-gradient(180deg, #050409 0%, #0b0a12 38%, #171015 72%, #26170f 100%);
@@ -94,7 +91,7 @@ const petals = [
   filter: drop-shadow(0 18px 40px rgba(0,0,0,0.5));
 }
 
-/* ---- falling petals ---- */
+/* ---- petals ---- */
 .petal {
   position: absolute;
   top: -6%;
@@ -121,7 +118,7 @@ const petals = [
   filter: invert(1) opacity(0.5) drop-shadow(0 4px 10px rgba(0,0,0,0.4));
 }
 
-/* ---- foreground content ---- */
+/* ---- foreground ---- */
 .hero-content {
   position: relative;
   z-index: 1;

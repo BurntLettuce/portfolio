@@ -36,20 +36,21 @@ input, textarea {
 }
 
 html, body {
+  height: 100vh;
+  height: 100dvh;
   margin: 0;
   padding: 0;
+  overflow: hidden;
   background: var(--espresso);
   color: var(--cream);
   font-family: var(--font-body);
-  scroll-behavior: smooth;
 }
 
-/* no visible scrollbar */
-html {
+main {
   scrollbar-width: none;      /* Firefox */
   -ms-overflow-style: none;   /* legacy Edge */
 }
-html::-webkit-scrollbar {
+main::-webkit-scrollbar {
   display: none;               /* Chrome, Safari, new Edge */
 }
 
@@ -72,6 +73,14 @@ body {
 
 #app {
   position: relative;
+  height: 100%;
+}
+
+main {
+  height: 100%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 .wrap {
@@ -164,12 +173,13 @@ button:focus-visible {
 .slide-up-enter-active, .slide-up-leave-active { transition: all 0.7s ease; }
 .slide-up-enter-from, .slide-up-leave-to { opacity: 0; transform: translateY(60px); }
 
+/* ---- page transition ---- */
 @media (max-width: 640px) {
   .wrap { padding: 0 18px; }
   .section { padding: 124px 0 64px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  main { scroll-behavior: auto; }
   * { animation: none !important; transition: none !important; }
 }

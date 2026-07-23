@@ -16,16 +16,17 @@ function initialPage() {
     const stored = localStorage.getItem(STORAGE_KEY)
     return validIds.includes(stored) ? stored : 'top'
   } catch {
-    return 'top' // localStorage can throw in some private-browsing modes
+    return 'top'
   }
 }
 
 const currentPage = ref(initialPage())
 provide('currentPage', currentPage)
+const mainEl = ref(null)
 
 function navigateTo(id) {
   if (id === currentPage.value) return
-  window.scrollTo(0, 0)
+  if (mainEl.value) mainEl.value.scrollTop = 0
   currentPage.value = id
   try {
     localStorage.setItem(STORAGE_KEY, id)
@@ -37,7 +38,7 @@ provide('navigateTo', navigateTo)
 
 <template>
   <GlobalNav />
-  <main>
+  <main ref="mainEl">
     <Transition name="page-fade" mode="out-in">
       <TopPage v-if="currentPage === 'top'" key="top" />
       <AboutSection v-else-if="currentPage === 'about'" key="about" />
