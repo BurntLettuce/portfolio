@@ -27,7 +27,6 @@ async function fetchNowPlaying() {
     return
   }
   try {
-    // Worker holds the API key
     const res = await fetch(lastfm.proxyUrl)
     if (!res.ok) throw new Error('Proxy request failed: ' + res.status)
     const data = await res.json()
