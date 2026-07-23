@@ -26,7 +26,6 @@ defineProps({
 </template>
 
 <style scoped>
-
 .article-item {
   display: grid;
   grid-template-columns: minmax(260px, 0.85fr) 1.15fr;

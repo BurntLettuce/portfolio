@@ -16,14 +16,14 @@ function adjustSize() {
 onMounted(() => window.addEventListener('resize', adjustSize))
 onBeforeUnmount(() => window.removeEventListener('resize', adjustSize))
 
-// transitions are 0ms until after mount, otherwise the nav would visibly animate in from narnia
+// transitions are 0ms until just after animation, 
+// otherwise the nav would animate from narnia.
 // 600ms/500ms match MenuBox timing.
 const dur = ref(0)
 onMounted(() => {
   setTimeout(() => { dur.value = 600 }, 500)
 })
 
-// Active tab is underlined after the animation
 const isNavigating = ref(false)
 let settleTimer = null
 function navigateTo(id) {
@@ -40,8 +40,8 @@ function navigateTo(id) {
   rawNavigateTo(id)
 }
 
-const ROW_HEIGHT_LINE = 60   // tab-bar mode
-const ROW_HEIGHT_STACK = 50  // floating mode
+const ROW_HEIGHT_LINE = 60
+const ROW_HEIGHT_STACK = 50
 const floatingItems = pages.filter((p) => p.id !== 'top')
 const visiblePages = computed(() => (isTop.value ? floatingItems : pages))
 
@@ -116,8 +116,6 @@ const itemsPos = computed(() => {
   pointer-events: none;
 }
 
-/* Text is centered so the glyphs track   
-   the center as it moves/resizes. */
 .nav-btn {
   position: absolute;
   top: 0;

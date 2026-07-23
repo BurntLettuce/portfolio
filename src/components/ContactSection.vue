@@ -1,6 +1,7 @@
 <script setup>
 import { ref, reactive, computed } from 'vue'
 import { profile } from '../data/portfolio.js'
+import { asset } from '../utils/asset.js'
 import LoadingBar from './LoadingBar.vue'
 import FallingPetals from './FallingPetals.vue'
 
@@ -29,7 +30,6 @@ async function send() {
     const mailto = `mailto:${profile.email}` +
       `?subject=${encodeURIComponent('New message from ' + form.name)}` +
       `&body=${encodeURIComponent(body)}`
-    // No backend - send to own mail client
     window.location.href = mailto
     await new Promise((resolve) => setTimeout(resolve, 700))
     status.value = 'sent'
@@ -48,7 +48,7 @@ function backToWrite() {
 <template>
   <section id="contact" class="section contact">
    <FallingPetals />
-   <img src="/images/branch.svg" class="branch-bg petals-behind" aria-hidden="true" alt="" />
+   <img :src="asset('images/branch.svg')" class="branch-bg petals-behind" aria-hidden="true" alt="" />
 
    <div class="wrap">
     <h2 class="section-title">Contact</h2>
@@ -198,7 +198,7 @@ function backToWrite() {
   background: transparent;
 }
 
-/* ---- status ---- */
+/* ---- status states ---- */
 .status-block { padding: 10px 0; }
 .status-line {
   font-family: var(--font-display);

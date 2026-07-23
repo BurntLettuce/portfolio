@@ -1,4 +1,6 @@
 <script setup>
+import { asset } from '../utils/asset.js'
+
 const petals = [
   { left: '6%', dur: 17, delay: 0 },
   { left: '20%', dur: 21, delay: 5 },
@@ -15,7 +17,7 @@ const petals = [
     <img
       v-for="(p, i) in petals"
       :key="i"
-      src="/images/blossom-solid.svg"
+      :src="asset('images/blossom-solid.svg')"
       class="petal"
       :style="{ left: p.left, animationDuration: p.dur + 's', animationDelay: p.delay + 's' }"
       alt=""

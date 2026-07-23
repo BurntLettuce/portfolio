@@ -1,5 +1,6 @@
 <script setup>
 import { about } from '../data/portfolio.js'
+import { asset } from '../utils/asset.js'
 import ProfileIcon from './ProfileIcon.vue'
 import ArticleItem from './ArticleItem.vue'
 import NowPlayingLastfm from './NowPlayingLastfm.vue'
@@ -11,7 +12,7 @@ import FallingPetals from './FallingPetals.vue'
    <FallingPetals />
    <div class="wrap">
     <div class="about-header">
-      <ProfileIcon icon-src="/images/profile.jpg" :size="108" />
+      <ProfileIcon :icon-src="asset('images/profile.jpg')" :size="108" />
       <NowPlayingLastfm class="lf-slot" />
     </div>
    </div>

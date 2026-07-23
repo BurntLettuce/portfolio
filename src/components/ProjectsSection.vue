@@ -57,8 +57,6 @@ import FallingPetals from './FallingPetals.vue'
   border-radius: 4px;
   overflow: hidden;
 }
-/* the image hugs the edge, the
-   text side keeps 30px gap  */
 .article-row.img-left-row { margin-left: 0; }
 .article-row.img-right-row { margin-right: 0; }
 

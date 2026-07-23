@@ -21,7 +21,7 @@ export default {
         headers: {
           'User-Agent': 'brandonle-portfolio-lastfm-widget',
         },
-        // cache at Cloudflare
+        // cache briefly at Cloudflare
         cf: { cacheTtl: 15 },
       })
 

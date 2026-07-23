@@ -20,12 +20,9 @@ function initialPage() {
   }
 }
 
-// Passed down so GlobalNav can read and change it. 
-// LocalStorage lets reloading the page keep you where you were.
 const currentPage = ref(initialPage())
 provide('currentPage', currentPage)
 
-// GlobalNav's buttons move/resize with css transitions
 function navigateTo(id) {
   if (id === currentPage.value) return
   window.scrollTo(0, 0)
@@ -33,7 +30,6 @@ function navigateTo(id) {
   try {
     localStorage.setItem(STORAGE_KEY, id)
   } catch {
-    // ignore — persistence is a nice-to-have, not required for navigation to work
   }
 }
 provide('navigateTo', navigateTo)

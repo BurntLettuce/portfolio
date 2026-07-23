@@ -6,9 +6,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-cloudflare-worker/.wrangler
-cloudflare-worker/.dev.vars
-cloudflare-worker/.dev.vars.*
 
 node_modules
 dist
@@ -19,6 +16,10 @@ dist-ssr
 .env
 .env.local
 .env.*.local
+
+cloudflare-worker/.wrangler
+cloudflare-worker/.dev.vars
+cloudflare-worker/.dev.vars.*
 
 # Editor directories and files
 .vscode/*

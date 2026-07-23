@@ -1,3 +1,5 @@
+import { asset } from '../utils/asset.js'
+
 export const profile = {
   name: 'Brandon Le',
   email: 'brandonle0824@gmail.com',
@@ -6,17 +8,17 @@ export const profile = {
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/brandonle0824/' },
     { label: 'Spotify', href: 'https://open.spotify.com/user/316rchk3u7jcz6u453kegpnqvqwe?si=788b952bce164e3c' },
     { label: 'Last.fm', href: 'https://www.last.fm/user/LookItsGhostyy/listening-report/year' },
-    { label: 'Resume', href: '/resume.pdf' },
+    { label: 'Resume', href: asset('resume.pdf') },
   ],
 }
 
 export const lastfm = {
   username: 'LookItsGhostyy',
-  proxyUrl: 'https://lastfm-now-playing-proxy.burntlettuce.workers.dev/',
+  proxyUrl: 'https://lastfm-now-playing-proxy.burntlettuce.workers.dev',
 }
 
 export const about = {
-  image: '/images/rig-photo.jpg',
+  image: asset('images/rig-photo.jpg'),
   tag: 'Skills',
   title: 'Development Skills',
   skills: [
@@ -32,7 +34,7 @@ export const projects = [
     id: 'calendar',
     name: 'calendar',
     tag: 'Web app',
-    image: '/images/calendar-screenshot.jpg',
+    image: asset('images/calendar-screenshot.jpg'),
     imgPosition: 'left',
     description: 'Basic calendar using JavaScript, HTML, CSS, and Firebase.',
     tastingNotes: ['JavaScript', 'HTML', 'CSS', 'Firebase'],
@@ -44,7 +46,7 @@ export const projects = [
     id: 'calendarwatch',
     name: 'calendarwatch',
     tag: 'Wear OS app',
-    image: '/images/calendarwatch-screenshot.jpg',
+    image: asset('images/calendarwatch-screenshot.jpg'),
     imgPosition: 'right',
     description: 'A Wear OS 7 application using Kotlin and Jetpack Compose that autonomously retrieves events from Firebase Firestore and schedules an alarm for each event.',
     tastingNotes: ['Kotlin', 'Jetpack Compose', 'Wear OS'],
@@ -56,7 +58,7 @@ export const projects = [
     id: 'yea',
     name: 'yea',
     tag: 'Dotfiles',
-    image: '/images/nixos-screenshot.jpg',
+    image: asset('images/nixos-screenshot.jpg'),
     imgPosition: 'left',
     description: 'A NixOS + KDE Plasma configuration.',
     tastingNotes: ['NixOS', 'KDE Plasma'],

@@ -1,4 +1,5 @@
 :root {
+  /* ---- palette ---- */
   --espresso: #0a080d;
   --roast: #16131a;
   --roast-light: #2b2531;
@@ -23,7 +24,6 @@
 
 * { box-sizing: border-box; }
 
-/* for protect.js  */
 html {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -119,7 +119,7 @@ button {
   position: relative;
   z-index: 1;
 }
-/* petals stays behind everything else */
+/* petals stays behind everything */
 .section > .petals-behind {
   z-index: 0;
 }
@@ -147,7 +147,7 @@ button {
   margin-bottom: 36px;
 }
 
-/* ---- focus ---- */
+/* ---- focus visibility ---- */
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--gold);

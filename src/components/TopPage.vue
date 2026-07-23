@@ -1,5 +1,6 @@
 <script setup>
 import { profile } from '../data/portfolio.js'
+import { asset } from '../utils/asset.js'
 
 const stars = [
   { top: '6%', left: '10%' }, { top: '11%', left: '24%' }, { top: '4%', left: '38%' },
@@ -27,19 +28,19 @@ const petals = [
       ></div>
 
       <!-- cherry blossom branch + rising-sun emblem -->
-      <img src="/images/blossom-sun.png" class="emblem" alt="" />
+      <img :src="asset('images/blossom-sun.png')" class="emblem" alt="" />
 
       <img
         v-for="(p, i) in petals"
         :key="'petal' + i"
-        src="/images/blossom-solid.svg"
+        :src="asset('images/blossom-solid.svg')"
         class="petal"
         :style="{ left: p.left, animationDuration: p.dur + 's', animationDelay: p.delay + 's' }"
         alt=""
       />
 
       <!-- static koi, resting in its own spot in the scene -->
-      <img src="/images/koi.svg" class="koi" alt="Koi fish" />
+      <img :src="asset('images/koi.svg')" class="koi" alt="Koi fish" />
     </div>
 
     <div class="hero-content">
@@ -80,7 +81,7 @@ const petals = [
   50% { opacity: 0.9; }
 }
 
-/* ---- blossom branch + sun ---- */
+/* ---- blossom branch + sun emblem ---- */
 .emblem {
   position: absolute;
   top: 6%;
@@ -117,7 +118,7 @@ const petals = [
   filter: invert(1) opacity(0.5) drop-shadow(0 4px 10px rgba(0,0,0,0.4));
 }
 
-/* ---- foreground ---- */
+/* ---- foreground content ---- */
 .hero-content {
   position: relative;
   z-index: 1;
