@@ -79,7 +79,7 @@ onBeforeUnmount(() => clearInterval(pollTimer))
       Couldn't reach Last.fm right now.
     </div>
 
-    
+    <a
       v-else-if="track"
       class="lf-track"
       :href="track.url"
