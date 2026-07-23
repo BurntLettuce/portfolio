@@ -6,13 +6,16 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+cloudflare-worker/.wrangler
+cloudflare-worker/.dev.vars
+cloudflare-worker/.dev.vars.*
 
 node_modules
 dist
 dist-ssr
 *.local
 
-# Environment variables (API keys etc.) — never commit these
+# Environment variables (API keys etc.)
 .env
 .env.local
 .env.*.local
