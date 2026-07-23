@@ -54,6 +54,7 @@ const petals = [
   position: relative;
   overflow: hidden;
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   background: linear-gradient(180deg, #050409 0%, #0b0a12 38%, #171015 72%, #26170f 100%);
@@ -134,7 +135,7 @@ h1 {
 }
 
 @media (max-width: 780px) {
-  .hero { min-height: auto; flex-direction: column; padding: 60px 0 200px; }
+  .hero { flex-direction: column; padding: 60px 0 200px; }
   .hero-content { margin: 0 auto; text-align: center; max-width: 90%; }
   .emblem { width: min(70vw, 420px); top: 4%; right: 0; opacity: 0.55; }
 }
